@@ -1,45 +1,7 @@
-/*	-WHAT IS THIS?-
-	The script featured here is an explanation of how to make your own custom addition to MPMB's D&D 5e Character Tools.
-	To add your own content to the Character Sheet, use the syntax below and save it in a file.
-	You can then import this file directly to the sheet using the "Import" button and "Import/Export" bookmark.
-	There you can either import the file as a whole or just copy the text into a dialogue.
-
-	-KEEP IN MIND-
-	Note that you can add as many custom codes as you want, either by importing consecutive files or pasting the scripts into the dialogue.
-	It is recommended to enter the code in a freshly downloaded sheet or to first reset sheet.
-	Thus you don't run the risk of things that have already been filled out causing conflicts.
-
-	-HOW TO READ-
-	Every line comes with a comment immediately after it to show whether it is // Optional // or // Required //,
-	followed by a more explanatory comment
-
-	-THIS IS JAVASCRIPT-
-	The imports scripts work by creating a new entry inside an existing object or by calling functions.
-	You can create new or overwrite existing global variables by omitting 'var'.
-	You will need to understand the basics of JavaScript variables: strings, arrays, and JSON objects.
-	Note that every opening symbol must have its closing counterpart: (), {}, [], "", ''.
-	If these are not present, the code will give an error when imported.
-	Use proper editing software for code (like Notepad++). Text processors like Microsoft Word will screw up your code.
-	To help finding syntax errors, use (online) code checking software like https://jshint.com
-
-	-COMMENTS IN THE EXAMPLE-
-	Anything on a line after two forward slashes is a comment and will be ignored when running the code.
-	Multiline comments are possible. Open them using the forward slash followed by an asterisk and close them with the opposite.
-	The below contains a lot of these comments. The comments are not necessary for the script to work, so feel free to remove them.
-*/
-
-/*	-INFORMATION-
-
-	Subject:	Spell
-
-	Effect:		This is the syntax for adding a new spell to the sheet.
-
-	Remarks:	This does not add anything to the attack section.
-				If you want attack cantrips or spells to be added to the attack section,
-				use the syntax for adding a weapon (as well), see "weapon (WeaponsList).js".
-
-	Sheet:		v13.1.0 and newer
-
+/*
+README: All the material in here is owned by Kobold Press, and is from the Deep Magic spellbooks. 
+	These books are awesome, you should buy a copy. 
+	This project is aimed to allow people to more easily use the spells by incorporating them into the character sheet.
 */
 
 var iFileName = "Deep Magic Vol 2 Spells.js";
