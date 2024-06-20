@@ -3,34 +3,6 @@ var iFileName = "Deep Magic Vol 1 Spells.js";
 
 RequiredSheetVersion("13.0.6");
 
-/*
-README: All the material in here is owned by Kobold Press, and is from the Deep Magic spellbooks. 
-	These books are awesome, you should buy a copy. 
-	This project is aimed to allow people to more easily use the spells by incorporating them into the character sheet.
-*/
-
-/*
-SpellsList["spellname"] = {
-    name : "Spell name",
-	nameShort : "shrtnme", //optional
-    classes : ["druid"],   //["druid", "ranger", "sorcerer", "wizard"]
-    source : ["DM1", 329],
-    level : 1,
-    school : "Ench", //"Abjur" "Conj" "Div" "Ench" "Illus" "Necro" "Trans" "Evoc"
-    time : "1 a", //1a 1bns 1 rea min h
-	timeFull : "1 reaction, which you take when you see a creature within 60 feet of you casting a spell", //optional
-    range : "60 ft", //ft rad S: (self e.g. S"15-ft cone" or S:5-ft rad) 
-    components : "V,S,M", //Use "M\u0192" for material component that is costly (will show as "Mƒ"). Use "M\u2020" for material component that is costly and also consumed (will show as "M†"). 
-    compMaterial : "Incense or a black candle", //optional
-    duration : "Conc, 1 min", //  "1 rnd" "conc, x min" "min" "h" "Instantaneous"- "Concentration, up to 10 minutes" is abbreviated to "Conc, 10 min".
-    save : "Wis", //"Str", "Dex", "Con", "Int", "Wis", or "Cha". 
-    description : "1 crea save or 1d8+1d8/SL+spell mod Psy dmg 1/turn on atk or cast; if not, rpt save at EOT to end", //Bludg Lightn Necro Pierc Slash
-    descriptionFull : "Long description here." + "\n   " + "More description." + AtHigherLevels + "When you cast this spell using a spell slot of 2nd level or higher, something happens for each slot level above 1st."
-	ritual : true //optional
-	descriptionCantripDie : "1 creature save or `CD`d12 Poison dmg",
-};
-
-*/
 
 /* SpellsList["spellname"] = {
     name : "Spell name",
@@ -51,23 +23,7 @@ SpellsList["spellname"] = {
 	descriptionCantripDie : "1 creature save or `CD`d12 Poison dmg",
 }; */
 
-
-
-
-/*	descriptionCantripDie // OPTIONAL //
-	TYPE:	string
-	USE:	the text to be filled in the description field of a cantrip,
-			but showing the damage for the current character level
-
-	This attribute is only used if the checkbox
-		"Apply character level and spellcasting ability to spell description (never for 'full' lists)"
-	is checked when generating a spell sheet.
-
-	If set to do so, the sheet replaces the `CD` with the cantrip die for the character's current level.
-	You can also add modifiers to this, as long as they are after the CD and between the back ticks.
-	For example, `CD-1` will produce the cantrip die minus 1, so 0 at level 2, 1 at level 5, 4 at level 15, etc.
-	
-	*/
+//129 spells 20/06/2024
 
 SpellsList["abhorrence"] = {
     name : "Abhorrence",
@@ -1513,6 +1469,20 @@ SpellsList["hunting stand"] = {
     descriptionFull : "You make a camouflaged shelter nestled in the branches of a tree or among a collection of stones. The shelter is a 10-foot cube centered on a point within range. It can hold as many as nine Medium or smaller creatures. The atmosphere inside the shelter is comfortable and dry, regardless of the weather outside. The shelter’s camouflage provides a modicum of concealment to its inhabitants; a creature outside the shelter has disadvantage on Wisdom (Perception) and Intelligence (Investigation) checks to detect or locate a creature within the shelter.",
 };
 
+SpellsList["ice burn"] = {
+    name : "Ice Burn",
+    classes : ["druid", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 213],
+    level : 3,
+    school : "Conj", 
+    time : "1 a", 
+    range : "60 ft", 
+    components : "V,S", 
+    duration : "Instantaneous", 
+    description : "Ranged spell attk, 3d10 cold dmg, disadv on all dex checks and saves until dmg healed.",
+    descriptionFull : "You instill deep cold into the body of a creature within range, damaging it and impairing joints and muscles. Make a ranged spell attack. On a hit, the target takes 3d10 cold damage and has disadvantage on all Dexterity checks and Dexterity saving throws until this damage is healed." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature within range for each slot level above 3rd. Each additional target must be within 30 feet of at least one other target.",
+};
+
 SpellsList["illuminate spoor"] = {
     name : "Illuminate Spoor",
     classes : ["druid", "ranger"],   
@@ -1526,6 +1496,84 @@ SpellsList["illuminate spoor"] = {
     duration : "Conc, 1 h", 
     description : "Illuminate a set of tracks, crea you designate that see the glow auto succeed on checks to track.",
     descriptionFull : "You touch a set of tracks created by a single creature. That set of tracks and all other tracks made by the same creature give off a faint glow. You and up to three creatures you designate when you cast this spell can see the glow. A creature that can see the glow automatically succeeds on Wisdom (Survival) checks to track that creature. If the tracks are covered by obscuring objects such as leaves or mud, you and the creatures you designate have advantage on Wisdom (Survival) checks to follow the tracks. If the creature leaving the tracks changes its tracks, such as by adding or removing footwear, the glow stops where the tracks change. Until the spell ends, you can use an action to touch and illuminate a new set of tracks." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, the duration is concentration, up to 8 hours. When you use a spell slot of 5th level or higher, the duration is concentration, up to 24 hours.",
+};
+
+SpellsList["intensify light"] = {
+    name : "Intensify Light",
+    classes : ["druid", "cleric", "paladin", "ranger"],   
+    source : ["DM1", 218],
+    level : 2,
+    school : "Trans",
+    time : "1 a", 
+    range : "S:15-ft rad", 
+    components : "V,S,M", 
+    compMaterial : "scale from a light drake", 
+    duration : "Conc, 1 min", 
+    save : "Wis", 
+    description : "When in range of light source, sheds bright light for additional 10ft.",
+    descriptionFull : "When you are within range of a light source, that source of light sheds bright light and dim light for an additional 10 feet. If the object sheds light from the daylight spell, the light within 10 feet of the object is considered sunlight. If you move out of range of the light source, it immediately reverts to its normal illumination.",
+};
+
+SpellsList["legion of rabid squirrels"] = {
+    name : "Legion of Rabid Squirrels",
+    classes : ["druid", "bard", "ranger"],   
+    source : ["DM1", 223],
+    level : 3,
+    school : "Conj", 
+    time : "1 a", 
+    range : "60 ft", 
+    components : "V,S,M", 
+    compMaterial : "an acorn or nut", 
+    duration : "Conc, 1 min", 
+    description : "Call legion of rabid squirrels, use swarm of poisonous snakes stats, DC10 con save or 4d6 poison dmg",
+    descriptionFull : "While in a forest, you call a legion of rabid squirrels to descend from the nearby trees at a point you can see within range. The squirrels form into a swarm that uses the statistics of a swarm of poisonous snakes, except it has a climbing speed of 30 feet rather than a swimming speed. The legion of squirrels is friendly to you and your companions. Roll initiative for the legion, which has its own turns. The legion of squirrels obeys your verbal commands (no action required by you). If you don’t issue any commands to the legion, it defends itself from hostile creatures but otherwise takes no actions. If you command it to move farther than 60 feet from you, the spell ends and the legion disperses back into the forest. A canid, such as a dog, wolf, fox, or worg, has disadvantage on attack rolls against targets other than the legion of rabid squirrels while the swarm is within 60 feet of the creature. When the spell ends, the squirrels disperse back into the forest." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, the legion’s poison damage increases by 1d6 for each slot level above 3rd.",
+};
+
+SpellsList["life sense"] = {
+    name : "Life Sense",
+    classes : ["druid", "bard", "cleric", "paladin", "ranger", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 223],
+    level : 3,
+    school : "Div",
+    time : "1 a", 
+    range : "Self", 
+    components : "V,S,M", 
+    compMaterial : "a clear piece of quartz", 
+    duration : "Conc, 10 min", 
+    save : "Cha", 
+    description : "Sense location of alide crea within 30ft, crea hiding from me make cha save to stay hidden.",
+    descriptionFull : "For the duration, you can sense the location of any creature that isn’t a construct or an undead within 30 feet of you, regardless of impediments to your other senses. This spell doesn’t sense creatures that are dead. A creature trying to hide its life force from you can make a Charisma saving throw. On a success, you can’t sense the creature with this casting of the spell. If you cast the spell again, the creature must make the saving throw again to remain hidden from your senses.",
+};
+
+SpellsList["looping trail"] = {
+    name : "Looping Trail",
+    classes : ["druid",  "ranger", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 225],
+    level : 4,
+    school : "Trans", 
+    time : "1 a", 
+    range : "Touch", 
+    components : "V,S,M", 
+    compMaterial : "a piece of rope twisted into a loop", 
+    duration : "8 h", 
+    save : "Wis", 
+    description : "Touch a trail, reconfigure it to loop back on itself, gives impression of forward progression, wis(surv) to notice.",
+    descriptionFull : "You touch a trail no more than 1 mile in length, reconfiguring it to give it switchbacks and curves that make the trail loop back on itself. For the duration, the trail makes subtle changes in its configuration and in the surrounding environment to give the impression of forward progression along a continuous path. A creature on the trail must succeed on a Wisdom (Survival) check to notice that the trail is leading it in a closed loop.",
+};
+
+SpellsList["maim"] = {
+    name : "Maim",
+    classes : ["druid", "bard", "sorcerer", "wizard"],   
+    source : ["DM1", 226],
+    level : 5,
+    school : "Necro", 
+    time : "1 a", 
+    range : "Self", 
+    components : "V,S", 
+    duration : "Instantaneous", 
+    save : "Wis", 
+    description : "Hands become black claws, melee spell attk, 4d6 necrotic dmg, choose body/upper/lower limb, see b",
+    descriptionFull : "Your hands become black claws bathed in necrotic energy. Make a melee spell attack against a creature you can reach. On a hit, the target takes 4d6 necrotic damage and a section of its body of your choosing withers:" + "\n   " + "Upper Limb. The target has disadvantage on Strength ability checks, and, if it has the Multiattack action, it has disadvantage on its first attack roll each round. " + "\n   " + "Lower Limb. The target’s speed is reduced by 10 feet, and it has disadvantage on Dexterity ability checks. " + "\n   " + "Body. Choose one damage type: bludgeoning, piercing, or slashing. The target loses its resistance to that damage type. If the target doesn’t have resistance to the chosen damage type, it is vulnerable to that damage type instead. The effect is permanent until removed by remove curse, greater restoration, or similar magic.",
 };
 
 SpellsList["mire"] = {
@@ -1542,6 +1590,21 @@ SpellsList["mire"] = {
     save : "Str", 
     description : "10ft diameter quicksand, str save or sink up to waist and restrained",
     descriptionFull : "When you cast mire, you create a 10-foot-diameter pit of quicksand, sticky mud, or a similar dangerous natural hazard suited to the region. A creature that’s in the area when the spell is cast or that enters the affected area must make a successful Strength saving throw or sink up to its waist and be restrained by the mire. From that point on, the mire acts as quicksand, but the DC for Strength checks to escape from the quicksand is equal to your spell save DC. A creature outside the mire trying to pull another creature free receives a +5 bonus on its Strength check.",
+};
+
+SpellsList["mortal insight"] = {
+    name : "Mortal Insight",
+    classes : ["druid", "cleric", "ranger", "warlock"],   
+    source : ["DM1", 229],
+    level : 3,
+    school : "Div", 
+    time : "1 a", 
+    range : "Self", 
+    components : "V,S", 
+    duration : "Conc, 10 min", 
+    description : "Smell wounded crea within 30ft, adv on wis perc/surv checks to track wounded cre, adv on melee attks on wounded crea",
+    descriptionFull : "A supernatural olfactory sense allows you to smell wounded living creatures. Until the spell ends, you can pinpoint a creature that doesn’t have all of its hit points within 30 feet of you, and you have advantage on Wisdom (Perception) and Wisdom (Survival) checks to track a creature that doesn’t have all of its hit points. In addition, you have advantage on melee attack rolls against any creature that doesn’t have all of its hit points. The spell has no effect on creatures that don’t have blood.",
+
 };
 
 SpellsList["natures aegis"] = {
@@ -1621,6 +1684,21 @@ SpellsList["obtuse"] = {
     descriptionFull : "You temporarily cloud the mind of a creature within range, inhibiting its decision-making skills. If the target succeeds on a Wisdom saving throw, the spell is ineffective. On a failed save, the next time the creature makes a Wisdom check before the spell ends, roll a d6 and subtract the result from the roll. The spell then ends.",
 };
 
+SpellsList["poisoned volley"] = {
+    name : "Poisoned Volley",
+    classes : ["druid", "ranger", "wizard"],   
+    source : ["DM1", 234],
+    level : 2,
+    school : "Conj",
+    time : "1 a", 
+    range : "60 ft", 
+    components : "V,S", 
+    duration : "Instantaneous", 
+    save : "Con", 
+    description : "Draw imaginary bowstring, fire glowing arrows, 20ft square take 3d8 poison dmg, become poisoned. Con save to halve.",
+    descriptionFull : "By drawing back and releasing an imaginary bowstring, you summon forth dozens of glowing green arrows. The arrows dissipate when they hit, but all creatures in a 20-foot square within range take 3d8 poison damage and become poisoned. A creature that makes a successful Constitution saving throw takes half as much damage and is not poisoned." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
+};
+
 SpellsList["quench"] = {
     name : "Quench",
     classes : ["druid", "ranger"],   
@@ -1653,6 +1731,22 @@ SpellsList["quick time"] = {
     descriptionFull : "You make one living creature or plant within range move rapidly in time compared to you. The target becomes one year older. For example, you could cast this spell on a seedling, which causes the plant to sprout from the soil, or you could cast this spell on a newly hatched duckling, causing it to become a full-grown duck. If the target is a creature with an Intelligence of 3 or higher, it must succeed on a Constitution saving throw to resist the aging. It can choose to fail the saving throw." + AtHigherLevels + "When you cast this spell using a spell slot of 5th level or higher, you increase the target’s age by one additional year for each slot level above 4th.",
 };
 
+SpellsList["radiant beacon"] = {
+    name : "Radiant Beacon",
+    classes : ["druid", "sorcerer", "wizard"],   
+    source : ["DM1", 236],
+    level : 5,
+    school : "Evoc",
+    time : "1 a", 
+    range : "S:5-ft rad", 
+    components : "V,S,M", 
+    compMaterial : "a piece of amber", 
+    duration : "Conc, 1 min", 
+    save : "Con", 
+    description : "Pillow of light, moves with me, crea in 5ft save or 4d8 rad dmg & blinded until start of my next turn",
+    descriptionFull : "A pillar of brilliant light falls from the air, filling the square you are in and the area within 5 feet of you. Each other creature in the area must make a Constitution saving throw. On a failed save, a creature takes 4d8 radiant damage and is blinded until the start of your next turn. On a successful save, it takes half as much damage and isn’t blinded by this spell. Undead and oozes have disadvantage on this saving throw." + "\n   " + "For the duration, a pillar of brilliant radiance shines around you and moves with you. It sheds bright light in a 10-foot radius and dim light for an additional 20 feet. The light is sunlight. This spell’s light can be seen from a distance of up to 10 miles outdoors at night or 5 miles during twilight.",
+};
+
 SpellsList["reaver spirit"] = {
     name : "Reaver Spirit",
     classes : ["druid", "cleric", "ranger"],   
@@ -1665,6 +1759,37 @@ SpellsList["reaver spirit"] = {
     duration : "Conc, 1 min", 
     description : "allies in range adv on str checks + saves, resist bludg, pierce, slash dmg, +2 bns to dmg, 1d4 exhaustion",
     descriptionFull : "You inspire allies to fight with the savagery of berserkers. You and any allies you can see within range have advantage on Strength checks and Strength saving throws; resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks; and a +2 bonus to damage with melee weapons. When the spell ends, each affected creature must succeed on a Constitution saving throw or gain 1d4 levels of exhaustion." + AtHigherLevels + "At Higher Levels. When you cast this spell using a spell slot of 4th level or higher, the bonus to damage increases by 1 for each slot level above 2nd.", 
+};
+
+SpellsList["revive beast"] = {
+    name : "Spellname",
+    classes : ["druid", "ranger"],   
+    source : ["DM1", 240],
+    level : 2,
+    school : "Necro",
+    time : "1 a", 
+    range : "Touch", 
+    components : "V,S,M", 
+    compMaterial : "emeralds worth 100 gp, which the spell consumes", 
+    duration : "Instantaneous", 
+    save : "Wis", 
+    description : "Revive a beast died within the last minute, returns to life with 1hp, cant restore old age or body parts",
+    descriptionFull : "You touch a beast that has died within the last minute. That beast returns to life with 1 hit point. This spell can’t return to life a beast that has died of old age, nor can it restore any missing body parts.",
+};
+
+SpellsList["shocking shroud"] = {
+    name : "Shocking Shroud",
+    classes : ["druid", "cleric", "sorcerer", "wizard"],   
+    source : ["DM1", 249],
+    level : 4,
+    school : "Evoc",
+    time : "1 a", 
+    range : "60 ft", 
+    components : "V,S,M", 
+    compMaterial : "bit of fur and a bead of amber, crystal, or glass", 
+    duration : "10 min", 
+    description : "Electricity arcs over body, resistance to lightning crea in 5ft on melee attks take 2d8 lightning dmg",
+    descriptionFull : "Arcs of electricity dance over your body for the duration, granting you resistance to lightning damage. You can end the spell early by using an action to dismiss it. In addition, whenever a creature within 5 feet of you hits you with a melee attack, arcs of electricity strike your attacker, who takes 2d8 lightning damage.",
 };
 
 SpellsList["starfall"] = {
@@ -1713,6 +1838,20 @@ SpellsList["storm gods doom"] = {
     descriptionFull : "A powerful wind swirls from your outstretched hand toward a point you choose within range, where it explodes with a low roar into vortex of air. Each creature in a 20-foot-radius cylinder centered on that point must make a Strength saving throw. On a failed save, the creature takes 3d8 bludgeoning damage, is pulled to the center of the cylinder, and is thrown 50 feet upward into the air. If a creature hits a solid obstruction when it’s thrown upward (such as a stone ceiling), it takes bludgeoning damage as if it had fallen 50 feet, minus the distance it traveled upward. For example, if a creature hits the ceiling after rising only 10 feet, it takes bludgeoning damage as if it had fallen 40 feet, or 4d6 bludgeoning damage." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, increase the distance affected creatures are thrown into the air by 10 feet for each slot level above 3rd.",
 };
 
+SpellsList["sudden dawn"] = {
+    name : "Sudden Dawn",
+    classes : ["druid", "cleric", "warlock", "wizard"],   
+    source : ["DM1", 257],
+    level : 3,
+    school : "Evoc",
+    time : "1 a", 
+    range : "100 ft", 
+    components : "V,S", 
+    duration : "Conc, 10 min", 
+    description : "Call dawn to arrive, 30ft rad 100ft high cylinder of light on point within range, brightly lit",
+    descriptionFull : "You call upon morning to arrive ahead of schedule. With a sharp word, you create a 30-foot-radius cylinder of light centered on a point on the ground within range. The cylinder extends vertically for 100 feet or until it reaches an obstruction, such as a ceiling. The area inside the cylinder is brightly lit.",
+	ritual : true, 
+};
 
 SpellsList["sudden stampede"] = {
     name : "Sudden Stampede",
@@ -1730,6 +1869,22 @@ SpellsList["sudden stampede"] = {
     descriptionFull : "You conjure up a multitude of fey spirits that manifest as galloping horses. These horses run in a 10-foot-wide, 60-foot-long line, in a given direction starting from a point within range, trampling all creatures in their path, before vanishing again. Each creature in the line takes 6d10 bludgeoning damage and is knocked prone. A successful Dexterity saving throw reduces the damage by half, and the creature is not knocked prone.",
 };
 
+SpellsList["thunderous wave"] = {
+    name : "Thunderous wave",
+    classes : ["druid", "sorcerer"],   
+    source : ["DM1", 262],
+    level : 3,
+    school : "Evoc", 
+    time : "1 a", 
+    range : "90 ft", 
+    components : "V,S", 
+    duration : "Instantaneous", 
+    save : "Str", 
+    description : "Shock wave at point, 30ft sphere, crea pushed 30ft, knocked prone, strikes obstruction 5d6 bludg dmg see b",
+    descriptionFull : "You initiate a shock wave centered at a point you designate within range. The wave explodes outward into a 30-foot‑radius sphere. This force deals no damage directly, but every creature the wave passes through must make a Strength saving throw. On a failed save, a creature is pushed 30 feet and knocked prone; if it strikes a solid obstruction, it also takes 5d6 bludgeoning damage. On a successful save, a creature is pushed 15 feet and not knocked prone, and it takes 2d6 bludgeoning damage if it strikes an obstruction. The spell also emits a thunderous boom that can be heard within 400 feet.",
+
+};
+
 
 SpellsList["thorn cage"] = {
     name : "Thorn Cage",
@@ -1744,6 +1899,37 @@ SpellsList["thorn cage"] = {
     save : "Str", 
     description : "1 crea save or restrained by thorny vines, 2d6 piercing dmg when they try to break free",
     descriptionFull : "Thick vines studded with sharp thorns spring from the ground around a target of your choice. The target must succeed on a Strength saving throw or be restrained by the thorny vines until the spell ends. A creature restrained by the vines can use its action to make a Strength check against your spell save DC. Doing so causes the creature to take 2d6 piercing damage from the thorns. On a successful check, it frees itself.",
+};
+
+SpellsList["tree running"] = {
+    name : "Spellname",
+    classes : ["druid", "ranger"],   
+    source : ["DM1", 267],
+    level : 2,
+    school : "Trans", 
+    time : "1 a", 
+    range : "Touch", 
+    components : "S,M", 
+    compMaterial : "a maple catkin", 
+    duration : "Conc, 1 h", 
+    description : "1 crea gain climb speed = walk speed while on plants, hold on one-handed, walk on tiny branches.",
+    descriptionFull : "One willing creature you touch gains a climbing speed equal to its walking speed. This climbing speed functions only while the creature is in contact with a living plant or fungus that’s growing from the ground. The creature can cling to an appropriate surface with just one hand or with just its feet, leaving its hands free to wield weapons or cast spells. The plant doesn’t give under the creature’s weight, so the creature can walk on the tiniest of tree branches, stand on a leaf, or run across the waving top of a field of wheat without bending a stalk or touching the ground.",
+};
+
+
+SpellsList["trick question"] = {
+    name : "Spellname",
+    classes : ["druid", "bard", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 268],
+    level : 1,
+    school : "Ench", 
+    time : "1 a", 
+    range : "30 ft", 
+    components : "V,S", 
+    duration : "Instantaneous", 
+    save : "Wis", 
+    description : "Ask a question with a one word answer, crea save or compelled to answer honestly.",
+    descriptionFull : "You pose a question that can be answered by one word, directed at a creature that can hear you. The target must make a successful Wisdom saving throw or be compelled to answer your question truthfully. When the answer is given, the target knows that you used magic to compel it.",
 };
 
 SpellsList["volley shield"] = {
@@ -1777,6 +1963,21 @@ SpellsList["weilers ward"] = {
     descriptionFull : "You create four small orbs of faerie magic that float around your head and give off dim light out to a radius of 15 feet. Whenever a Large or smaller enemy enters that area of dim light, or starts its turn in the area, you can use your reaction to attack it with one or more of the orbs. The enemy creature makes a Charisma saving throw. On a failed save, the creature is pushed 20 feet directly away from you, and each orb you used in the attack explodes violently, dealing 1d6 force damage to the creature." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, the number of orbs increases by one for each slot level above 2nd.", 
 };
 
+SpellsList["winters radiance"] = {
+    name : "Winter’s radiance",
+    classes : ["druid", "cleric", "sorcerer", "wizard"],   
+    source : ["DM1", 277],
+    level : 6,
+    school : "Evoc", 
+    time : "1 a", 
+    range : "400 ft", 
+    components : "V,S,M", 
+    compMaterial : "a piece of polished glass", 
+    duration : "Conc, 1 min", 
+    save : "Con", 
+    description : "Sunlight reflects off fresh snow, temp drops, save or 4d8 cold dmg, blinded.",
+    descriptionFull : "When you cast this spell, the piercing rays of a day’s worth of sunlight reflecting off fresh snow blankets the area, and the temperature drops precipitously. A creature in the area must make a Constitution saving throw, taking 4d8 cold damage and being blinded for the duration on a failed save or half as much damage with no additional effect on a successful one. Creatures possessing Sunlight Sensitivity have disadvantage on their save." + "\n   " + "If any of this spell’s area overlaps with an area of darkness created by a spell of 6th level or lower, the spell that created the darkness is dispelled.",
+};
 
 SpellsList["wresting wind"] = {
     name : "Wresting Wind",
@@ -1793,26 +1994,3 @@ SpellsList["wresting wind"] = {
     description : "Burst of air rips weapons and items from hands of enemies in 20ft rad, items land 10ft away",
     descriptionFull : "By blowing a pinch of confetti from your cupped hand, you create a burst of air that can rip weapons and other items out of the hands of your enemies. Each enemy in a 20-foot radius centered on a point you target within range must make a successful Strength saving throw or drop anything held in its hands. The objects land 10 feet away from the creatures that dropped them, in random directions.", 
 };
-
-
-/* SpellsList["spellname"] = {
-    name : "Spellname",
-    classes : ["druid", "bard", "cleric", "paladin", "ranger", "sorcerer", "warlock", "wizard"],   
-    source : ["DM1", 2],
-    level : 1,
-    school : "", //"Abjur" "Conj" "Div" "Ench" "Illus" "Necro" "Trans" "Evoc"
-    time : "1 a", 
-	timeFull : "1 reaction, which you take when ", 
-    range : "60 ft", 
-    components : "V,S,M", 
-    compMaterial : "Incense", 
-    duration : "Conc, 1 min", 
-    save : "Wis", 
-    description : "PLACEHOLDER",
-    descriptionFull : "Long description here." + "\n   " + "more text" + AtHigherLevels + "When you...",
-	descriptionCantripDie : "1 creature save or",
-	ritual : true, //optional
-};
-  */
- 
- //107 spells
