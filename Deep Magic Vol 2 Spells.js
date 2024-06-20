@@ -1,73 +1,9 @@
-/*
-README: All the material in here is owned by Kobold Press, and is from the Deep Magic spellbooks. 
-	These books are awesome, you should buy a copy. 
-	This project is aimed to allow people to more easily use the spells by incorporating them into the character sheet.
-*/
-
 var iFileName = "Deep Magic Vol 2 Spells.js";
-/* 	iFileName // OPTIONAL //
-	TYPE:	string
-	USE:	how the file will be named in the sheet if you import it as a file
-
-	Note that this is a variable called 'iFileName'.
-	Variables invoked inside an import script will not be available after importing.
-	However, if you invoke the variable without the 'var', it will be available after importing.
-
-	This doesn't have to be the same as the actual name of the file.
-	This doesn't need to have the .js file extension.
-	Only the first occurrence of this variable will be used.
-*/
 
 RequiredSheetVersion("13.0.6");
-/*	RequiredSheetVersion // OPTIONAL //
-	TYPE:	function call with one variable, a string or number
-	USE:	the minimum version of the sheet required for the import script to work
-
-	If this script is imported into a sheet with an earlier version than given here, the player will be given a warning.
-
-	The variable you input can be a the full semantic version of the sheet as a string (e.g. "13.0.6" or "13.1.0-beta1+201209").
-	Alternatively, you can input a number, which the sheet will translate to a semantic version.
-	For example:
-		FUNCTION CALL						REQUIRED MINIMUM VERSION
-		`RequiredSheetVersion(13);`			13.0.0
-		`RequiredSheetVersion(13.1);`		13.1.0
-
-	You can find the full semantic version of the sheet at the bottom of every page,
-	or look at the "Get Latest Version" bookmark, which lists the version number,
-	or go to File >> Properties >> Description, where the version is part of the document title.
-*/
-
-
-//New spell schools
-//spellSchoolList["NewSc"] = "new school";
-
 
 
 //Template Here
-
-/*
-SpellsList["spellname"] = {
-    name : "Spell name",
-	nameShort : "shrtnme", //optional
-    classes : ["druid"],   //["druid", "ranger", "sorcerer", "wizard"]
-    source : ["DM2", 329],
-    level : 1,
-    school : "Ench", //"Abjur" "Conj" "Div" "Ench" "Illus" "Necro" "Trans" "Evoc"
-    time : "1 a", //1a 1bns 1 rea min h
-	timeFull : "1 reaction, which you take when you see a creature within 60 feet of you casting a spell", //optional
-    range : "60 ft", //ft rad S: (self e.g. S"15-ft cone" or S:5-ft rad) 
-    components : "V,S,M", //Use "M\u0192" for material component that is costly (will show as "Mƒ"). Use "M\u2020" for material component that is costly and also consumed (will show as "M†"). 
-    compMaterial : "Incense or a black candle", //optional
-    duration : "Conc, 1 min", //  "1 rnd" "conc, x min" "min" "h" "Instantaneous"- "Concentration, up to 10 minutes" is abbreviated to "Conc, 10 min".
-    save : "Wis", //"Str", "Dex", "Con", "Int", "Wis", or "Cha". 
-    description : "1 crea save or 1d8+1d8/SL+spell mod Psy dmg 1/turn on atk or cast; if not, rpt save at EOT to end", //Bludg Lightn Necro Pierc Slash
-    descriptionFull : "Long description here." + "\n   " + "More description." + AtHigherLevels + "When you cast this spell using a spell slot of 2nd level or higher, something happens for each slot level above 1st."
-	ritual : true //optional
-	descriptionCantripDie : "1 creature save or `CD`d12 Poison dmg",
-};
-
-*/
-
 /* SpellsList["spellname"] = {
     name : "Spellname",
     classes : ["druid"],   
@@ -86,25 +22,9 @@ SpellsList["spellname"] = {
     descriptionFull : "Long description here." + AtHigherLevels + "When you cast this spell using a spell slot of 2nd level or higher...",
 	descriptionCantripDie : "1 creature save or `CD`d12 Poison dmg",
 };
-
  */
 
-
-/*	descriptionCantripDie // OPTIONAL //
-	TYPE:	string
-	USE:	the text to be filled in the description field of a cantrip,
-			but showing the damage for the current character level
-
-	This attribute is only used if the checkbox
-		"Apply character level and spellcasting ability to spell description (never for 'full' lists)"
-	is checked when generating a spell sheet.
-
-	If set to do so, the sheet replaces the `CD` with the cantrip die for the character's current level.
-	You can also add modifiers to this, as long as they are after the CD and between the back ticks.
-	For example, `CD-1` will produce the cantrip die minus 1, so 0 at level 2, 1 at level 5, 4 at level 15, etc.
-	
-	*/
-
+//45 spells 20/06/2024
 
 SpellsList["bark bulwark"] = {
     name : "Bark Bulwark",
@@ -138,6 +58,22 @@ SpellsList["bartholomews elemental arc"] = {
     description : "call elemental energy towards you, make rgd spell attk to determine who takes dmg, see book",
     descriptionFull : "You become a living conduit of elemental energy. The friendly target doesn’t take the triggering damage, as you draw the elemental energy into yourself and toward a hostile creature you can see within 30 feet of you. Make a ranged spell attack. On a hit, the target takes half the triggering damage, and you take the other half. On a miss, you take half the triggering damage. On a critical hit, the target takes all the triggering damage, and you take none. After the attack, regardless if it hits or misses, you gain resistance to the triggering damage type until the start of your next turn.",
 };
+
+SpellsList["beast essence"] = {
+    name : "Beast essence",
+    classes : ["druid", "ranger"],   
+    source : ["DM1", 142],
+    level : 3,
+    school : "Trans",
+    time : "1 a", 
+    range : "Self", 
+    components : "V,S,M", 
+    compMaterial : "a feather or bit of animal fur", 
+    duration : "1 h", 
+    description : "PLACEHOLDER",
+    descriptionFull : "You transform your body to take on aspects of one of the following creatures for the duration." + "\n   " + "Bear. Your body becomes bulkier, and your fingers are tipped with thick, yellow claws. You can use your spellcasting ability modifier instead of your Strength modifier when making a grapple attack and when escaping a grapple. In addition, you gain temporary hit points equal to twice your spellcasting ability modifier when you cast this spell and every 10 minutes until the spell ends. " + "\n   " + "Boar. Two yellowed tusks grow from your bottom jaw, and short, coarse hair covers your face, neck, torso, and arms. You have advantage on Wisdom (Perception) checks that rely on smell. In addition, once on each of your turns, if you move at least 10 feet before making a melee attack, the attack deals extra damage of the attack’s type equal to your spellcasting ability modifier, and the target must succeed on a Strength saving throw or be pushed up to 5 feet away from you. " + "\n   " + "Hare. Your skin becomes covered in a layer of soft fur, and your legs become more muscular. Your speed increases by 10 feet, and you can take the Dash action as a bonus action on each of your turns. In addition, you can use your spellcasting ability score instead of your Strength score to determine the height and distance you can jump. " + "\n   " + "Raven. Feathers erupt along your arms, cheekbones, and legs. You gain a flying speed equal to your walking speed, and you have advantage on Wisdom (Perception) checks that rely on sight. In addition, you can mimic any sound you have heard. A creature that hears the sounds can tell they are imitations with a successful Wisdom (Insight) check against your spell save DC. When the spell ends, you fall if you are still aloft. " + "\n   " + "Snake. Your body becomes slimmer, your skin becomes cool to the touch, and your neck elongates slightly. Once on each of your turns, when you hit a creature with an attack, that creature must succeed on a Constitution saving throw or take poison damage equal to your spellcasting ability modifier and become poisoned until the end of its next turn.",
+};
+ 
 
 SpellsList["bitter wind"] = {
     name : "Bitter Wind",
@@ -231,6 +167,22 @@ SpellsList["by the light of the watchful moon"] = {
     descriptionFull : "Regardless of the time of day or your location, you command the watchful gaze of the moon to illuminate threats to you and your allies. Shafts of bright moonlight, each 5 feet wide, shine down from the sky (or from the ceiling if you are indoors), illuminating all spaces within range that contain threats, whether they are enemies, traps, or hidden hazards. An enemy creature that makes a successful Charisma saving throw resists the effect and is not picked out by the moon’s glow. " + "\n   " + "The glow does not make invisible creatures visible, but it does indicate an invisible creature’s general location (somewhere within the 5-foot beam). The light continues to illuminate any target that moves, but a target that moves out of the spell’s area is no longer illuminated. A threat that enters the area after the spell is cast is not subject to the spell’s effect.",
 };
 
+SpellsList["chaotic flowerfall"] = {
+    name : "Chaotic Flowerfall",
+    classes : ["druid", "bard", "cleric", "paladin", "ranger", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 151],
+    level : 9,
+    school : "Conj",
+    time : "1 a", 
+    range : "150 ft", 
+    components : "V,S,M", 
+    compMaterial : "a posy of flowers", 
+    duration : "Instantaneous", 
+    save : "Dex", 
+    description : "Shower of flowers 10 10ft cubes, +10d6 hp or cured of diseases and conditions, enemies 10d10 necro dmg, see b",
+    descriptionFull : "A shower of flowers falls across the ground at ten different points you can see within range. The flowers fall in 10-foot cubes centered on each point, and each cube must be contiguous with at least one other cube. Each friendly creature in a cube chooses one of the following when the flowers appear—it regains 10d6 hit points or it is cured of all diseases and all the following conditions: blinded, charmed, deafened, paralyzed, petrified, and poisoned. Each hostile creature in a cube must make a Dexterity saving throw, taking 10d10 necrotic damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one cube of falling flowers is affected only once.",
+};
+ 
 SpellsList["chamber of restoring amber"] = {
     name : "Chamber of Restoring Amber",
 	nameShort : "Chamb. restoring amber",
@@ -306,6 +258,23 @@ SpellsList["court the flame"] = {
     description : "Nearby nonmagical fire protects you, +2 to AC, expend fire to absorb fire dmg",
     descriptionFull : "You court the power of a nearby fire to shield you. Choose one source of nonmagical fire that is the size of a torch or larger within 5 feet of you. You gain a +2 bonus to your AC for the duration. Until this spell ends, if you would take fire damage from any source, you can use your reaction to reduce that damage to 0. If you do, the spell ends. If you spend at least 1 minute more than 5 feet away from the source of fire you chose when you cast this spell, the spell immediately ends.",
 };
+
+SpellsList["desolation"] = {
+    name : "Desolation",
+    classes : ["druid", "cleric", "wizard"],   
+    source : ["DM1", 163],
+    level : 8,
+    school : "Necro", 
+    time : "1 h", 
+    range : "Self", 
+    components : "V,S,M", 
+    compMaterial : "an obsidian acorn worth at least 500 gp, which is consumed in the casting", 
+    duration : "1 year", 
+    save : "Wis", 
+    description : "Curse the land, area in 1 mile becomes infertile, see book",
+    descriptionFull : "You plant an obsidian acorn in solid ground and spend an hour chanting a litany of curses to the natural world, after which the land within 1 mile of the acorn becomes infertile, regardless of its previous state. Nothing will grow there, and all plant life in the area dies over the course of a day. Plant creatures are not affected. Spells that summon plants, such as entangle, require an ability check using the caster’s spellcasting ability against your spell save DC. On a successful check, the spell functions normally; if the check fails, the spell is countered by desolation. " + "\n   " + "After one year, the land slowly reverts to its normal fertility, rejoining the march of nature. " + "\n   " + "A living creature that finishes a short rest within the area of a desolation spell halves the result of any Hit Dice it expends. Desolation counters the effects of a bloom spell. Ritual Focus. " + "\n   " + "If you expend your ritual focus, the duration becomes permanent.",
+};
+ 
 
 SpellsList["diversion door"] = {
     name : "Diversion Door",
@@ -399,6 +368,23 @@ SpellsList["electric eels"] = {
     descriptionFull : "You create two lightning bolts shaped like eels in unoccupied spaces you can see within range that last for the duration or until you cast this spell again. When you cast the spell, you can force each lightning eel to emit a single bolt of lightning at a creature within 5 feet of it. Make one melee spell attack for each eel. On a hit, the target takes lightning damage equal to 2d6 + your spellcasting ability modifier." + "\n   " + "As a bonus action on your turn, you can move each lightning eel up to 30 feet and repeat the attack against a creature within 5 feet of it." + "\n   " + "If one lightning eel is within 5 feet of you, you have resistance to lightning damage. If both eels are within 5 feet of you, you have immunity to lightning damage.", 
 };
 
+SpellsList["elemental exchange"] = {
+    name : "Elemental Exchange",
+    classes : ["druid", "sorcerer", "wizard"],   
+    source : ["DM1", 175],
+    level : 3,
+    school : "Trans",
+    time : "1 rea", 
+	timeFull : "1 reaction, which you take when a creature you can see uses a feature or casts a spell that requires a saving throw to avoid or reduce acid, cold, fire, lightning, or thunder damage", 
+    range : "60 ft", 
+    components : "S", 
+    duration : "Instantaneous", 
+    save : "Cha", 
+    description : "Twist properties of a spell from one element into another, save or change to element of your choice.",
+    descriptionFull : "You twist the elemental properties of a spell, breath weapon, or other effect utilizing elemental energies to shift from its current element into another. The creature causing the triggering spell or effect (such as a red dragon’s Fire Breath, an ankheg’s Acid Spray, a kraken’s Lightning Storm, the cone of cold spell, or similar) must succeed on a Charisma saving throw or the damage the effect deals changes to one of the following damage types of your choice: acid, cold, fire, lightning, or thunder.",
+};
+ 
+
 SpellsList["elemental infusion"] = {
     name : "Elemental infusion",
     classes : ["druid"],   
@@ -430,6 +416,23 @@ SpellsList["everans scorching serpents"] = {
     descriptionFull : "You summon a serpent made of flames to burn and constrict one creature you can see within range. The target must make a Strength saving throw. On a failed save, the target takes 4d6 fire damage and is grappled by the fiery serpent. On a successful save, the target takes half the damage and isn’t grappled. At the end of each of the grappled target’s turns, it takes 2d6 fire damage. A creature grappled by the fiery serpent can use its action to make a Strength or Dexterity check (the target’s choice) against your spell save DC. If it succeeds, it is no longer grappled, and the spell ends on it." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd. The targets must be within 30 feet of each other when you target them.",
 };
 
+SpellsList["flight of ideas"] = {
+    name : "Flight of Ideas",
+    classes : ["druid", "bard", "cleric", "paladin", "ranger", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 181],
+    level : 3,
+    school : "Ench", 
+    time : "1 a", 
+    range : "60 ft", 
+    components : "V,M", 
+    compMaterial : "a moonstone worth 500 gp", 
+    duration : "Conc, 1 min", 
+    save : "Cha", 
+    description : "Fill mind of humanoid with ideas of the fey, save or bewildered, see b",
+    descriptionFull : "You tap into the realm of the fey and fill the mind of one Humanoid you can see within range with eerie ideas, thoughts, and songs of the fey. The target must succeed on a Charisma saving throw or be bewildered for the duration. The bewildered target must spend each of its turns moving up to half its speed in a random direction and chattering eccentrically, expressing the ideas infiltrating its mind. This movement doesn’t provoke opportunity attacks. " + "\n   " + "At the end of each of its turns, the target can make another Charisma saving throw. On a success, the spell ends on the target." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, you can target one additional Humanoid for each slot level above 3rd. The Humanoids must be within 30 feet of each other when you target them.",
+};
+ 
+
 SpellsList["galvanize metal"] = {
     name : "Galvanize metal",
     classes : ["druid"],   
@@ -445,6 +448,7 @@ SpellsList["galvanize metal"] = {
     description : "Electrify metal object e.g. weapon/armor, 1d8 lightning dmg, cant take reactions, repeat dmg on bns",
     descriptionFull : "Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to electrify. Any creature in physical contact with the object takes 1d8 lightning damage when you cast the spell and can’t take reactions until the start of its next turn. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this effect again. If a creature is holding or wearing the object and takes damage from it, the creature must succeed on a Constitution saving throw or be unable to part with the object." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",
 };
+  
 
 SpellsList["heartfire"] = {
     name : "Heartfire",
@@ -569,6 +573,40 @@ SpellsList["sear"] = {
     descriptionFull : "You exhale searing hot wind in a 30-foot cone. Each creature in the area must make a Dexterity saving throw. On a failed save, a creature takes 5d8 fire damage and is pushed away from you in a direction following the cone up to the edge of the cone. On a successful save, a creature takes half the damage and isn’t pushed."  + "\n   " + "The wind disperses gas or vapor in the area, and it ignites flammable objects in the area that aren’t being worn or carried." + AtHigherLevels + "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.",
 };
 
+SpellsList["seismic shift"] = {
+    name : "Seismic Shift",
+    classes : ["druid", "sorcerer", "wizard"],   
+    source : ["DM1", 2],
+    level : 4,
+    school : "Evoc", 
+    time : "1 a", 
+	timeFull : "1 reaction, which you take when ", 
+    range : "60 ft", 
+    components : "V,S,M", 
+    compMaterial : "a small piece of sandstone", 
+    duration : "Instantaneous", 
+    save : "D/S", 
+    description : "60x10ft line ",
+    descriptionFull : "You disrupt the ground in a line 60 feet long and 10 feet wide extending from you in a direction you choose. You cause one of the following effects: " + "\n   " + "Collapse. The ground crumbles in the line. Each creature in the line must make a Dexterity saving throw. On a failed save, a creature is restrained as it sinks a few feet into the ground. On a successful save, a creature’s speed is reduced by 10 feet until the end of its next turn as its feet and legs are covered in thick layers of earth. A restrained creature can use its action to make a Strength check against your spell save DC. If it succeeds, it is no longer restrained. " + "\n   " + "Rupture. The ground bursts away from you along the line. Each creature in the line must make a Strength saving throw. On a failure, a creature is pushed up to 60 feet away from you in a direction following the line and knocked prone. On a successful save, a creature is pushed half the distance and isn’t knocked prone.",
+};
+ 
+  
+  SpellsList["servant of doom"] = {
+    name : "Servant of Doom",
+    classes : ["druid", "cleric", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 218],
+    level : 4,
+    school : "Trans", 
+    time : "1 bns", 
+    range : "Self", 
+    components : "V", 
+    duration : "Conc, 1 min", 
+    save : "Wis", 
+    description : "Assume the form of Emissary (wis/int based save bonus) or Envoy (str/dex based save bonus) see b",
+    descriptionFull : "A force of destruction gifts you a portion of its power. Each time you cast this spell, you choose whether to assume the form of the emissary or the form of the envoy for the duration." + "\n   " + " Emissary. The blood in your veins shines through your skin, extra eyes open in your flesh, and you gain the following benefits:" + "\n   " + " • You gain a flying speed equal to your walking speed and the ability to hover, though you must stay within 5 feet of the ground. • You gain truesight out to a range of 60 feet. • Creatures have disadvantage on Wisdom saving throws against your spells and abilities. • You have advantage on Intelligence- or Wisdom-based attack rolls." + "\n   " + "Envoy. Your skin becomes stonelike, bony growths erupt across your body, and you gain the following benefits:" + "\n   " + " • You ignore difficult terrain for movement purposes. • Yo  can move through walls and other solid barriers if you succeed on a Strength check you make just before moving up to the barrier. The DC equals 10 + twice the barrier’s thickness in feet. • You have advantage on Strength- or Dexterity-based attack rolls. • Your melee weapon attacks deal an extra 1d6 slashing damage on a hit.", 
+};
+ 
+
 SpellsList["spirit balm"] = {
     name : "Spirit balm",
     classes : ["druid"],   
@@ -582,6 +620,22 @@ SpellsList["spirit balm"] = {
     description : "Divine/nature spirit, you + 1 ally gain spellcasting modifier HP, end charmed/frightened condition",
     descriptionFull : "You call on a divine spirit or a spirit of nature to heal your wounds and calm your mind. You and one willing creature you can see within range regain a number of hit points equal to your spellcasting ability modifier, and you can choose to end either the charmed or frightened condition on each of you." + AtHigherLevels + "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
 };
+
+SpellsList["spray"] = {
+    name : "Spray",
+    classes : ["druid", "cleric", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 226],
+    level : 1,
+    school : "Conj", 
+    time : "1 a",  
+    range : "self:30ft line", 
+    components : "V,S", 
+    duration : "Conc, 1 min", 
+    save : "Str", 
+    description : "Torrent of water 30x5ft line,save or 3d6 bludg dmg, pushed 15ft away, prone",
+    descriptionFull : "You conjure a powerful torrent of water in a line that is 30 feet long and 5 feet wide. Each creature in the line must make a Strength saving throw. On a failed save, the creature suffers 3d6 bludgeoning damage, is pushed up to 15 feet away from you in a direction following the line, and knocked prone. On a successful save, the creature takes half the damage and isn’t pushed or knocked prone." + AtHigherLevels + "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+};
+ 
 
 SpellsList["storm door"] = {
     name : "Storm door",
@@ -630,5 +684,51 @@ SpellsList["thresh the battlefield"] = {
     descriptionFull : "You create a magical threshing blade that spins and grows as it flies out from you. Each creature in a 60-foot cone must make a Dexterity saving throw. On a failed save, a creature takes 6d10 slashing damage and is lacerated for 1 minute. On a successful save, a creature takes half the damage and isn’t lacerated. A lacerated creature takes 1d10 slashing damage at the start of each of its turns and can’t regain hit points until the laceration ends. At the end of each of its turns, a lacerated creature can make a Constitution saving throw. On a success, the laceration ends. Alternatively, a creature can take an action to stanch the laceration with a successful Wisdom (Medicine) check against your spell save DC." + AtHigherLevels + "When you cast this spell using a spell slot of 7th level or higher, the damage (both initial and later) increases by 1d10 for each slot level above 6th.",
 };
 
-
-//34 spells
+SpellsList["transmogrification"] = {
+    name : "Transmogrification",
+    classes : ["druid", "cleric", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 231],
+    level : 7,
+    school : "Trans", 
+    time : "1 a", 
+    range : "Self", 
+    components : "V,S,M", 
+    compMaterial : "a bit of flesh from a fiend, or a feather from a celestial, either worth at least 50 gp", 
+    duration : "Conc, 10 min", 
+    description : "Change body, gain 3 effects, bns a to change effect,",
+    descriptionFull : "You elevate your body to a higher form. When you cast the spell, choose three of the forms described below and indicate which one’s effects will occur first. While the spell lasts, you can use a bonus action to exchange one of your choices for an unused one, or to make a new choice when the current one ends. The spell ends when its duration expires or when you expend all available uses of the third form you adopt." + "\n   " + "Wings. You sprout wings from your shoulders and gain a flying speed of 60 feet. The wings can be batlike or feathered. " + "\n   " + "Breath Weapon. You gain a breath  weapon of one of these types of your choice: acid, cold, fire, lightning, or poison. You can use an action to unleash your breath weapon in a 15-foot line that is 5 feet wide. Each creature in the line takes 8d6 damage of the chosen type, or half as much damage with a successful Dexterity saving throw. The breath weapon is considered a magical attack. You can use this ability up to three times, and it expires after the third use." + "\n   " + "Limbs. Appendages resembling tentacles, spider legs, pincers, or something else of your choosing sprout from your body. Choose slashing, bludgeoning, or piercing damage; you can use an action to make two melee weapon attacks with your new limbs, and each attack deals 2d12 damage of the chosen type. You are proficient with these weapons, and they have the reach and finesse properties. " + "\n   " + "Radiating Light. You emit light in a 10-foot radius. The light can come from a halo, from ghostly flames, from your eyes, or any other source you choose. The light deals your choice of necrotic, fire, or radiant damage. A creature that passes through the light on its turn or that ends its turn in the light takes 2d10 damage of the chosen type, or half as much damage with a successful Constitution saving throw. A creature takes this damage only once per turn." + "\n   " + "Regeneration. You regain 10 hit points at the start of your turn. You can use this ability up to three times, and it expires after the third use. Overwhelming Might. When you hit a target with a weapon attack, the target takes an extra 2d8 force damage and must succeed on a Strength saving throw or be knocked prone. " + "\n   " + "Frightening Presence. As an action, choose any number of creatures within 30 feet of you that can see you. Each of them must succeed on a Wisdom saving throw or become frightened of you for 1 minute. A creature frightened in this way can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature’s saving throw is successful or the effect ends for it, the creature is immune to your frightening presence for the next 24 hours. You can use this ability up to three times, and it expires after the third use.",
+};
+ 
+  
+  SpellsList["weirding wake"] = {
+    name : "Weirding Wake",
+    classes : ["druid", "sorcerer", "wizard"],   
+    source : ["DM1", 237],
+    level : 5,
+    school : "Conj", 
+    time : "1 a", 
+    range : "300 ft", 
+    components : "V,S", 
+    duration : "Instantaneous", 
+    save : "Str", 
+    description : "Wave of water 30ftx10ft line, save or 8d8 bludg dmg, pushed 15ft, knocked prone",
+    descriptionFull : "You create a wave of water that rushes in a 30-foot line that is 10 feet wide from a point you can see within range. Each creature in the line must make a Strength saving throw. On a failed save, a creature takes 8d8 bludgeoning damage, is pushed up to 15 feet in a direction following the line, and knocked prone. On a successful save, a creature takes half the damage and isn’t pushed or knocked prone." + "\n   " + "If you cast this spell on a point of freestanding water that is at least 20 feet deep, the line is 60 feet long instead, and any waterborne vehicle in the line has a 30 percent chance of capsizing if it is Large or smaller and a 15 percent  chance of capsizing if it is Huge." + AtHigherLevels + "When you cast this spell with a spell slot of 6th level or higher, the damage increases by 1d8 and the chance for a waterborne vehicle to capsize increases by 5 percent for each slot level above 5th.",
+};
+ 
+  
+  SpellsList["windblown"] = {
+    name : "Windblown",
+    classes : ["druid", "sorcerer", "warlock", "wizard"],   
+    source : ["DM1", 238],
+    level : 4,
+    school : "Trans", 
+    time : "1 a", 
+    range : "Touch", 
+    components : "V,S,M", 
+    compMaterial : "a pinch of quail down", 
+    duration : "Conc, 1 min", 
+    save : "Dex", 
+    description : "Blast of air launches crea, save or thrown up to 60ft, if hits ceiling takes fall dmg or floats until spell ends",
+    descriptionFull : "A blast of air forms beneath a creature you can see within range, launching the creature into the air. If the target isn’t somehow anchored to the ground, it is thrown up to 60 feet into the air. It can make a Dexterity saving throw to grab onto a fixed object it can reach, thus avoiding the launch." + "\n   " + "If some solid object (such as a ceiling) is encountered on the way up, the target strikes the object and takes falling damage just as if it had fallen the same distance. If the target reaches the full height of 60 feet without striking anything, it remains buoyant, bobbing in the air, for the duration and can be blown along with the prevailing wind." + "\n   " + "When the spell ends, the target falls to the ground, taking falling damage as normal. This spell has no effect against a creature with a flying speed.",
+};
+ 
